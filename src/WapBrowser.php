@@ -21,10 +21,11 @@
  * THE SOFTWARE.
  *
  * @category  BrowserDetector
- * @package   BrowserDetector
+ *
  * @author    Thomas Mueller <t_mueller_stolzenhain@yahoo.de>
  * @copyright 2012-2015 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
+ *
  * @link      https://github.com/mimmi20/BrowserDetector
  */
 
@@ -32,7 +33,7 @@ namespace UaBrowserType;
 
 /**
  * @category  BrowserDetector
- * @package   BrowserDetector
+ *
  * @copyright 2012-2015 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
@@ -48,28 +49,28 @@ class WapBrowser extends AbstractType
     /**
      * the Browser is a Bot
      *
-     * @var boolean
+     * @var bool
      */
     protected $bot = false;
 
     /**
      * the Browser is a Syndication Reader
      *
-     * @var boolean
+     * @var bool
      */
     protected $reader = false;
 
     /**
      * the Browser uses a transcoding webservice
      *
-     * @var boolean
+     * @var bool
      */
     protected $transcoder = false;
 
     /**
      * the Browser should be banned
      *
-     * @var boolean
+     * @var bool
      */
     protected $banned = false;
 }

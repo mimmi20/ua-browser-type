@@ -21,10 +21,11 @@
  * THE SOFTWARE.
  *
  * @category  BrowserDetector
- * @package   BrowserDetector
+ *
  * @author    Thomas Mueller <t_mueller_stolzenhain@yahoo.de>
  * @copyright 2012-2015 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
+ *
  * @link      https://github.com/mimmi20/BrowserDetector
  */
 
@@ -32,7 +33,7 @@ namespace UaBrowserType;
 
 /**
  * @category  BrowserDetector
- * @package   BrowserDetector
+ *
  * @copyright 2012-2015 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
@@ -48,28 +49,28 @@ abstract class AbstractType implements TypeInterface
     /**
      * the Browser is a Bot
      *
-     * @var boolean
+     * @var bool
      */
     protected $bot = false;
 
     /**
      * the Browser is a Syndication Reader
      *
-     * @var boolean
+     * @var bool
      */
     protected $reader = false;
 
     /**
      * the Browser uses a transcoding webservice
      *
-     * @var boolean
+     * @var bool
      */
     protected $transcoder = null;
 
     /**
      * the Browser should be banned
      *
-     * @return boolean
+     * @return bool
      */
     protected $banned = null;
 
@@ -80,7 +81,7 @@ abstract class AbstractType implements TypeInterface
      */
     public function __toString()
     {
-        return (string)$this->getName();
+        return (string) $this->getName();
     }
 
     /**
@@ -96,7 +97,7 @@ abstract class AbstractType implements TypeInterface
     /**
      * Returns True, if the Browser is a Bot
      *
-     * @return boolean
+     * @return bool
      */
     public function isBot()
     {
@@ -106,7 +107,7 @@ abstract class AbstractType implements TypeInterface
     /**
      * Returns True, if the Browser is a Syndication Reader
      *
-     * @return boolean
+     * @return bool
      */
     public function isSyndicationReader()
     {
@@ -116,7 +117,7 @@ abstract class AbstractType implements TypeInterface
     /**
      * Returns True, if the Browser uses a transcoding webservice
      *
-     * @return boolean
+     * @return bool
      */
     public function isTranscoder()
     {
@@ -126,7 +127,7 @@ abstract class AbstractType implements TypeInterface
     /**
      * Returns True, if the Browser should be banned
      *
-     * @return boolean
+     * @return bool
      */
     public function isBanned()
     {
