@@ -39,22 +39,22 @@ namespace UaBrowserType;
  */
 class TypeFactory
 {
-    const APPLICATION = 'application';
-    const BOT = 'bot';
+    const APPLICATION            = 'application';
+    const BOT                    = 'bot';
     const BOT_SYNDICATION_READER = 'bot-syndication-reader';
-    const BOT_TRANCODER = 'bot-trancoder';
-    const BROWSER = 'browser';
-    const EMAIL_CLIENT = 'email-client';
-    const FEED_READER = 'feed-reader';
-    const MULTIMEDIA_PLAYER = 'multimedia-player';
-    const OFFLINE_BROWSER = 'offline-browser';
-    const PIM = 'pim';
-    const TOOL = 'tool';
-    const TRANSCODER = 'transcoder';
-    const UNKNOWN = 'unknown';
-    const USERAGENT_ANONYMIZER = 'useragent-anonymizer';
-    const VALIDATOR = 'validator';
-    const WAP_BROWSER = 'wap-browser';
+    const BOT_TRANCODER          = 'bot-trancoder';
+    const BROWSER                = 'browser';
+    const EMAIL_CLIENT           = 'email-client';
+    const FEED_READER            = 'feed-reader';
+    const MULTIMEDIA_PLAYER      = 'multimedia-player';
+    const OFFLINE_BROWSER        = 'offline-browser';
+    const PIM                    = 'pim';
+    const TOOL                   = 'tool';
+    const TRANSCODER             = 'transcoder';
+    const UNKNOWN                = 'unknown';
+    const USERAGENT_ANONYMIZER   = 'useragent-anonymizer';
+    const VALIDATOR              = 'validator';
+    const WAP_BROWSER            = 'wap-browser';
 
     /**
      * @param string $type

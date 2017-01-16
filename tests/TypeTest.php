@@ -39,17 +39,17 @@ class TypeTest extends \PHPUnit_Framework_TestCase
     /**
      * tests the constructor and the getter
      *
-     * @covers Type::__construct()
-     * @covers Type::getName()
-     * @covers Type::isBot()
-     * @covers Type::isSyndicationReader()
-     * @covers Type::isTranscoder()
+     * @covers \UaBrowserType\Type::__construct()
+     * @covers \UaBrowserType\Type::getName()
+     * @covers \UaBrowserType\Type::isBot()
+     * @covers \UaBrowserType\Type::isSyndicationReader()
+     * @covers \UaBrowserType\Type::isTranscoder()
      */
     public function testSetterGetter()
     {
-        $name = 'test1';
-        $bot = true;
-        $reader = false;
+        $name       = 'test1';
+        $bot        = true;
+        $reader     = false;
         $transcoder = null;
 
         $type = new Type($name, $bot, $reader, $transcoder);
@@ -65,7 +65,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
     /**
      * tests the __toString function
      *
-     * @covers Type::__toString()
+     * @covers \UaBrowserType\Type::__toString()
      */
     public function testTostring()
     {
@@ -81,8 +81,8 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      *
      * @depends testSetterGetter
-     * @covers Type::serialize()
-     * @covers Type::unserialize()
+     * @covers \UaBrowserType\Type::serialize()
+     * @covers \UaBrowserType\Type::unserialize()
      */
     public function testSerialize(Type $type)
     {
@@ -96,9 +96,9 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      *
      * @depends testSetterGetter
-     * @covers Type::toJson()
-     * @covers TypeFactory::__construct
-     * @covers TypeFactory::fromJson
+     * @covers \UaBrowserType\Type::toJson()
+     * @covers \UaBrowserType\TypeFactory::__construct
+     * @covers \UaBrowserType\TypeFactory::fromJson
      */
     public function testTojson(Type $type)
     {
@@ -112,9 +112,9 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      *
      * @depends testSetterGetter
-     * @covers Type::toJson()
-     * @covers TypeFactory::__construct
-     * @covers TypeFactory::fromArray
+     * @covers \UaBrowserType\Type::toJson()
+     * @covers \UaBrowserType\TypeFactory::__construct
+     * @covers \UaBrowserType\TypeFactory::fromArray
      */
     public function testToarray(Type $type)
     {
@@ -122,4 +122,3 @@ class TypeTest extends \PHPUnit_Framework_TestCase
         self::assertEquals($type, (new TypeFactory())->fromArray($array));
     }
 }
- 
