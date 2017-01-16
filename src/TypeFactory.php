@@ -68,4 +68,29 @@ class TypeFactory
                 return 'unknown';
         }
     }
+
+    /**
+     * @param array $data
+     *
+     * @return \UaBrowserType\Type
+     */
+    public function fromArray(array $data)
+    {
+        $name       = isset($data['name']) ? $data['name'] : null;
+        $bot        = isset($data['bot']) ? $data['bot'] : false;
+        $reader     = isset($data['reader']) ? $data['reader'] : false;
+        $transcoder = isset($data['transcoder']) ? $data['transcoder'] : false;
+
+        return new Type($name, $bot, $reader, $transcoder);
+    }
+
+    /**
+     * @param string $json
+     *
+     * @return \UaBrowserType\Type
+     */
+    public function fromJson($json)
+    {
+        return $this->fromArray((array) json_decode($json));
+    }
 }

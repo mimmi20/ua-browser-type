@@ -71,9 +71,9 @@ class Type implements TypeInterface, \Serializable
      * @param string $name
      * @param bool   $bot
      * @param bool   $reader
-     * @param null   $transcoder
+     * @param bool   $transcoder
      */
-    public function __construct($name, $bot = false, $reader = false, $transcoder = null)
+    public function __construct($name, $bot = false, $reader = false, $transcoder = false)
     {
         $this->name       = $name;
         $this->bot        = $bot;
@@ -156,9 +156,12 @@ class Type implements TypeInterface, \Serializable
      */
     public function unserialize($serialized)
     {
-        $unseriliazedData = unserialize($serialized);
+        $data = unserialize($serialized);
 
-        $this->fromArray($unseriliazedData);
+        $this->name       = isset($data['name']) ? $data['name'] : null;
+        $this->bot        = isset($data['bot']) ? $data['bot'] : false;
+        $this->reader     = isset($data['reader']) ? $data['reader'] : false;
+        $this->transcoder = isset($data['transcoder']) ? $data['transcoder'] : false;
     }
 
     /**
@@ -180,24 +183,5 @@ class Type implements TypeInterface, \Serializable
             'reader'     => $this->reader,
             'transcoder' => $this->transcoder,
         ];
-    }
-
-    /**
-     * @param array $data
-     */
-    public function fromArray(array $data)
-    {
-        $this->name       = isset($data['name']) ? $data['name'] : null;
-        $this->bot        = isset($data['bot']) ? $data['bot'] : false;
-        $this->reader     = isset($data['reader']) ? $data['reader'] : false;
-        $this->transcoder = isset($data['transcoder']) ? $data['transcoder'] : false;
-    }
-
-    /**
-     * @param string $json
-     */
-    public function fromJson($json)
-    {
-        $this->fromArray(json_decode($json));
     }
 }
