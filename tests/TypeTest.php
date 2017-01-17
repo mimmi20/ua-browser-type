@@ -33,6 +33,10 @@ namespace UaBrowserTypeTest;
 
 use UaBrowserType\Type;
 use UaBrowserType\TypeFactory;
+use Cache\Adapter\Filesystem\FilesystemCachePool;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Adapter\Local;
+use UaBrowserType\TypeLoader;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -108,8 +112,12 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTojson(Type $type)
     {
+        $adapter      = new Local(__DIR__ . '/../cache/');
+        $cache        = new FilesystemCachePool(new Filesystem($adapter));
+        $loader       = new TypeLoader($cache);
+
         $json = $type->toJson();
-        self::assertEquals($type, (new TypeFactory())->fromJson($json));
+        self::assertEquals($type, (new TypeFactory($cache, $loader))->fromJson($json));
     }
 
     /**
@@ -124,7 +132,11 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testToarray(Type $type)
     {
+        $adapter      = new Local(__DIR__ . '/../cache/');
+        $cache        = new FilesystemCachePool(new Filesystem($adapter));
+        $loader       = new TypeLoader($cache);
+
         $array = $type->toArray();
-        self::assertEquals($type, (new TypeFactory())->fromArray($array));
+        self::assertEquals($type, (new TypeFactory($cache, $loader))->fromArray($array));
     }
 }

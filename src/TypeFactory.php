@@ -33,6 +33,7 @@ namespace UaBrowserType;
 
 use BrowserDetector\Loader\LoaderInterface;
 use Psr\Cache\CacheItemPoolInterface;
+use BrowserDetector\Factory\FactoryInterface;
 
 /**
  * @category  BrowserDetector
@@ -40,7 +41,7 @@ use Psr\Cache\CacheItemPoolInterface;
  * @copyright 2012-2017 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
-class TypeFactory
+class TypeFactory implements FactoryInterface
 {
     const APPLICATION            = 'application';
     const BOT                    = 'bot';

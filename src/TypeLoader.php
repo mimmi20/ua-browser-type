@@ -34,6 +34,7 @@ namespace UaBrowserType;
 use Psr\Cache\CacheItemInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use BrowserDetector\Loader\NotFoundException;
+use BrowserDetector\Loader\LoaderInterface;
 
 /**
  * Browser detection class
