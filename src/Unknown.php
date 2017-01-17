@@ -36,6 +36,7 @@ namespace UaBrowserType;
  *
  * @copyright 2012-2017 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
+ * @deprecated
  */
 class Unknown extends AbstractType
 {
