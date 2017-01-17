@@ -31,9 +31,9 @@
 
 namespace UaBrowserType;
 
+use BrowserDetector\Factory\FactoryInterface;
 use BrowserDetector\Loader\LoaderInterface;
 use Psr\Cache\CacheItemPoolInterface;
-use BrowserDetector\Factory\FactoryInterface;
 
 /**
  * @category  BrowserDetector

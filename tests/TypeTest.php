@@ -31,11 +31,11 @@
 
 namespace UaBrowserTypeTest;
 
+use Cache\Adapter\Filesystem\FilesystemCachePool;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 use UaBrowserType\Type;
 use UaBrowserType\TypeFactory;
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
 use UaBrowserType\TypeLoader;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
