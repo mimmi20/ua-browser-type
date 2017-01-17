@@ -106,7 +106,9 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @uses UaBrowserType\Type::__construct
      * @uses UaBrowserType\Type::toArray
+     * @uses UaBrowserType\TypeFactory::__construct
      * @uses UaBrowserType\TypeFactory::fromArray
+     * @uses UaBrowserType\TypeLoader::__construct
      * @covers UaBrowserType\Type::toJson
      * @covers UaBrowserType\TypeFactory::fromJson
      */
@@ -127,6 +129,8 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @depends testSetterGetter
      *
      * @uses UaBrowserType\Type::__construct
+     * @uses UaBrowserType\TypeFactory::__construct
+     * @uses UaBrowserType\TypeLoader::__construct
      * @covers UaBrowserType\Type::toArray
      * @covers UaBrowserType\TypeFactory::fromArray
      */
