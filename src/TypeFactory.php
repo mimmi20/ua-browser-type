@@ -89,12 +89,7 @@ class TypeFactory implements FactoryInterface
      */
     public function detect($type)
     {
-        switch ($type) {
-            default:
-                $key = 'unknown';
-        }
-
-        return $this->loader->load($key);
+        return $this->loader->load($type);
     }
 
     /**
@@ -104,10 +99,10 @@ class TypeFactory implements FactoryInterface
      */
     public function fromArray(array $data)
     {
-        $name       = isset($data['name']) ? $data['name'] : null;
-        $bot        = isset($data['bot']) ? $data['bot'] : false;
-        $reader     = isset($data['reader']) ? $data['reader'] : false;
-        $transcoder = isset($data['transcoder']) ? $data['transcoder'] : false;
+        $name       = array_key_exists('name', $data) ? $data['name'] : null;
+        $bot        = array_key_exists('bot', $data) ? $data['bot'] : false;
+        $reader     = array_key_exists('reader', $data) ? $data['reader'] : false;
+        $transcoder = array_key_exists('transcoder', $data) ? $data['transcoder'] : false;
 
         return new Type($name, $bot, $reader, $transcoder);
     }

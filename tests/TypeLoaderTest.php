@@ -29,11 +29,34 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @covers UaBrowserType\TypeLoader::has
+     */
+    public function testHasUnknown()
+    {
+        self::assertTrue($this->object->has('unknown'));
+    }
+
+    /**
+     * @covers UaBrowserType\TypeLoader::has
+     * @covers UaBrowserType\TypeLoader::load
+     */
+    public function testLoadUnknown()
+    {
+        $type = $this->object->load('unknown');
+
+        self::assertInstanceOf('\UaBrowserType\Type', $type);
+        self::assertNull($type->getName());
+    }
+
+    /**
      * @expectedException \BrowserDetector\Loader\NotFoundException
      * @expectedExceptionMessage the browser type with key "does not exist" was not found
+     *
+     * @covers UaBrowserType\TypeLoader::has
+     * @covers UaBrowserType\TypeLoader::load
      */
     public function testLoadNotAvailable()
     {
-        $this->object->load('does not exist', 'test-ua');
+        $this->object->load('does not exist');
     }
 }
