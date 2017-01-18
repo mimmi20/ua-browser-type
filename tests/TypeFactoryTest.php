@@ -2,11 +2,11 @@
 
 namespace UaBrowserTypeTest;
 
+use Cache\Adapter\Filesystem\FilesystemCachePool;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 use UaBrowserType\TypeFactory;
 use UaBrowserType\TypeLoader;
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
 
 /**
  * Test class for \BrowserDetector\Detector\Device\Mobile\GeneralMobile
@@ -24,7 +24,7 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $adapter      = new Local(__DIR__ . '/../../cache/');
+        $adapter      = new Local(__DIR__ . '/../cache/');
         $cache        = new FilesystemCachePool(new Filesystem($adapter));
         $loader       = new TypeLoader($cache);
         $this->object = new TypeFactory($cache, $loader);
@@ -67,10 +67,10 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
         $transcoder = false;
 
         $data = [
-            'name' => $name,
-            'bot' => $bot,
-            'reader' => $reader,
-            'transcoder' => $transcoder
+            'name'       => $name,
+            'bot'        => $bot,
+            'reader'     => $reader,
+            'transcoder' => $transcoder,
         ];
 
         $type = $this->object->fromArray($data);
@@ -94,10 +94,10 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
         $transcoder = false;
 
         $data = [
-            'name' => $name,
-            'bot' => $bot,
-            'reader' => $reader,
-            'transcoder' => $transcoder
+            'name'       => $name,
+            'bot'        => $bot,
+            'reader'     => $reader,
+            'transcoder' => $transcoder,
         ];
 
         $type = $this->object->fromJson(json_encode($data));
