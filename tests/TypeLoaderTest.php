@@ -25,10 +25,13 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
     {
         $adapter      = new Local(__DIR__ . '/../cache/');
         $cache        = new FilesystemCachePool(new Filesystem($adapter));
+        $cache->clear();
         $this->object = new TypeLoader($cache);
     }
 
     /**
+     * @covers UaBrowserType\TypeLoader::__construct
+     * @covers UaBrowserType\TypeLoader::init
      * @covers UaBrowserType\TypeLoader::has
      */
     public function testHasUnknown()
@@ -37,6 +40,10 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @uses UaBrowserType\Type::__construct
+     * @uses UaBrowserType\Type::getName
+     * @covers UaBrowserType\TypeLoader::__construct
+     * @covers UaBrowserType\TypeLoader::init
      * @covers UaBrowserType\TypeLoader::has
      * @covers UaBrowserType\TypeLoader::load
      */
@@ -52,6 +59,8 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
      * @expectedException \BrowserDetector\Loader\NotFoundException
      * @expectedExceptionMessage the browser type with key "does not exist" was not found
      *
+     * @covers UaBrowserType\TypeLoader::__construct
+     * @covers UaBrowserType\TypeLoader::init
      * @covers UaBrowserType\TypeLoader::has
      * @covers UaBrowserType\TypeLoader::load
      */

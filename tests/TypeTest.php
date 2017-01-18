@@ -114,9 +114,10 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTojson(Type $type)
     {
-        $adapter      = new Local(__DIR__ . '/../cache/');
-        $cache        = new FilesystemCachePool(new Filesystem($adapter));
-        $loader       = new TypeLoader($cache);
+        $adapter = new Local(__DIR__ . '/../cache/');
+        $cache   = new FilesystemCachePool(new Filesystem($adapter));
+        $cache->clear();
+        $loader  = new TypeLoader($cache);
 
         $json = $type->toJson();
         self::assertEquals($type, (new TypeFactory($cache, $loader))->fromJson($json));
@@ -136,9 +137,10 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testToarray(Type $type)
     {
-        $adapter      = new Local(__DIR__ . '/../cache/');
-        $cache        = new FilesystemCachePool(new Filesystem($adapter));
-        $loader       = new TypeLoader($cache);
+        $adapter = new Local(__DIR__ . '/../cache/');
+        $cache   = new FilesystemCachePool(new Filesystem($adapter));
+        $cache->clear();
+        $loader  = new TypeLoader($cache);
 
         $array = $type->toArray();
         self::assertEquals($type, (new TypeFactory($cache, $loader))->fromArray($array));
