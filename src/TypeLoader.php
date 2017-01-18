@@ -104,7 +104,7 @@ class TypeLoader implements LoaderInterface
 
         $cacheItem = $this->cache->getItem(hash('sha512', 'browser-type-cache-' . $key));
 
-        $type = $cacheItem->get();;
+        $type = $cacheItem->get();
 
         return new Type(
             $type->name,
