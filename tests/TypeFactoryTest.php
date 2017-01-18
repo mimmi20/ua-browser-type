@@ -56,6 +56,7 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      *
      * @uses UaBrowserType\TypeLoader::__construct
      * @uses UaBrowserType\TypeLoader::init
+     * @uses UaBrowserType\TypeLoader::initCache
      * @uses UaBrowserType\TypeLoader::has
      * @uses UaBrowserType\TypeLoader::load
      * @covers UaBrowserType\TypeFactory::__construct
@@ -106,8 +107,8 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      * @uses UaBrowserType\Type::isSyndicationReader
      * @uses UaBrowserType\Type::isTranscoder
      * @uses UaBrowserType\TypeLoader::__construct
-     * @uses UaBrowserType\TypeFactory::fromArray
      * @covers UaBrowserType\TypeFactory::__construct
+     * @covers UaBrowserType\TypeFactory::fromArray
      * @covers UaBrowserType\TypeFactory::fromJson
      */
     public function testFromJson()

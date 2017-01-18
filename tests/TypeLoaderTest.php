@@ -32,6 +32,7 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers UaBrowserType\TypeLoader::__construct
      * @covers UaBrowserType\TypeLoader::init
+     * @covers UaBrowserType\TypeLoader::initCache
      * @covers UaBrowserType\TypeLoader::has
      */
     public function testHasUnknown()
@@ -44,6 +45,7 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
      * @uses UaBrowserType\Type::getName
      * @covers UaBrowserType\TypeLoader::__construct
      * @covers UaBrowserType\TypeLoader::init
+     * @covers UaBrowserType\TypeLoader::initCache
      * @covers UaBrowserType\TypeLoader::has
      * @covers UaBrowserType\TypeLoader::load
      */
@@ -61,6 +63,7 @@ class TypeLoaderTest extends \PHPUnit_Framework_TestCase
      *
      * @covers UaBrowserType\TypeLoader::__construct
      * @covers UaBrowserType\TypeLoader::init
+     * @covers UaBrowserType\TypeLoader::initCache
      * @covers UaBrowserType\TypeLoader::has
      * @covers UaBrowserType\TypeLoader::load
      */

@@ -88,7 +88,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @depends testSetterGetter
      *
-     * @uses UaBrowserType\Type::toArray
+     * @covers UaBrowserType\Type::toArray
      * @covers UaBrowserType\Type::serialize
      * @covers UaBrowserType\Type::unserialize
      */
@@ -104,13 +104,13 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
      *
-     * @uses UaBrowserType\Type::__construct
-     * @uses UaBrowserType\Type::toArray
      * @uses UaBrowserType\TypeFactory::__construct
      * @uses UaBrowserType\TypeFactory::fromArray
+     * @uses UaBrowserType\TypeFactory::fromJson
      * @uses UaBrowserType\TypeLoader::__construct
+     * @covers UaBrowserType\Type::__construct
+     * @covers UaBrowserType\Type::toArray
      * @covers UaBrowserType\Type::toJson
-     * @covers UaBrowserType\TypeFactory::fromJson
      */
     public function testTojson(Type $type)
     {
@@ -129,11 +129,11 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
      *
-     * @uses UaBrowserType\Type::__construct
      * @uses UaBrowserType\TypeFactory::__construct
+     * @uses UaBrowserType\TypeFactory::fromArray
      * @uses UaBrowserType\TypeLoader::__construct
+     * @covers UaBrowserType\Type::__construct
      * @covers UaBrowserType\Type::toArray
-     * @covers UaBrowserType\TypeFactory::fromArray
      */
     public function testToarray(Type $type)
     {
