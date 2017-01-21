@@ -24,14 +24,7 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @uses UaBrowserType\Type::__construct
-     * @uses UaBrowserType\Type::getName
-     * @uses UaBrowserType\Type::isBot
-     * @uses UaBrowserType\Type::isSyndicationReader
-     * @uses UaBrowserType\Type::isTranscoder
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\TypeFactory::__construct
-     * @covers UaBrowserType\TypeFactory::fromArray
+     *
      */
     public function testFromArray()
     {
@@ -57,15 +50,7 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @uses UaBrowserType\Type::__construct
-     * @uses UaBrowserType\Type::getName
-     * @uses UaBrowserType\Type::isBot
-     * @uses UaBrowserType\Type::isSyndicationReader
-     * @uses UaBrowserType\Type::isTranscoder
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\TypeFactory::__construct
-     * @covers UaBrowserType\TypeFactory::fromArray
-     * @covers UaBrowserType\TypeFactory::fromJson
+     *
      */
     public function testFromJson()
     {

@@ -38,12 +38,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * tests the constructor and the getter
-     *
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::getName
-     * @covers UaBrowserType\Type::isBot
-     * @covers UaBrowserType\Type::isSyndicationReader
-     * @covers UaBrowserType\Type::isTranscoder
      */
     public function testSetterGetter()
     {
@@ -64,10 +58,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * tests the __toString function
-     *
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::__toString
-     * @covers UaBrowserType\Type::getName
      */
     public function testTostring()
     {
@@ -83,10 +73,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      *
      * @depends testSetterGetter
-     *
-     * @covers UaBrowserType\Type::toArray
-     * @covers UaBrowserType\Type::serialize
-     * @covers UaBrowserType\Type::unserialize
      */
     public function testSerialize(Type $type)
     {
@@ -99,14 +85,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
-     *
-     * @uses UaBrowserType\TypeFactory::__construct
-     * @uses UaBrowserType\TypeFactory::fromArray
-     * @uses UaBrowserType\TypeFactory::fromJson
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::toArray
-     * @covers UaBrowserType\Type::toJson
      */
     public function testTojson(Type $type)
     {
@@ -119,12 +97,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
-     *
-     * @uses UaBrowserType\TypeFactory::__construct
-     * @uses UaBrowserType\TypeFactory::fromArray
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::toArray
      */
     public function testToarray(Type $type)
     {
