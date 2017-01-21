@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2012-2015, Thomas Mueller <t_mueller_stolzenhain@yahoo.de>
+ * Copyright (c) 2012-2017, Thomas Mueller <t_mueller_stolzenhain@yahoo.de>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -23,7 +23,7 @@
  * @category  BrowserDetector
  *
  * @author    Thomas Mueller <t_mueller_stolzenhain@yahoo.de>
- * @copyright 2012-2015 Thomas Mueller
+ * @copyright 2012-2017 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  *
  * @link      https://github.com/mimmi20/BrowserDetector
@@ -34,45 +34,52 @@ namespace UaBrowserType;
 /**
  * @category  BrowserDetector
  *
- * @copyright 2012-2015 Thomas Mueller
+ * @copyright 2012-2017 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
-abstract class AbstractType implements TypeInterface
+class Type implements TypeInterface, \Serializable
 {
     /**
      * the name of the browser
      *
      * @var string
      */
-    protected $name = null;
+    private $name = null;
 
     /**
      * the Browser is a Bot
      *
      * @var bool
      */
-    protected $bot = false;
+    private $bot = false;
 
     /**
      * the Browser is a Syndication Reader
      *
      * @var bool
      */
-    protected $reader = false;
+    private $reader = false;
 
     /**
      * the Browser uses a transcoding webservice
      *
      * @var bool
      */
-    protected $transcoder = null;
+    private $transcoder = null;
 
     /**
-     * the Browser should be banned
-     *
-     * @return bool
+     * @param string $name
+     * @param bool   $bot
+     * @param bool   $reader
+     * @param bool   $transcoder
      */
-    protected $banned = null;
+    public function __construct($name, $bot = false, $reader = false, $transcoder = false)
+    {
+        $this->name       = $name;
+        $this->bot        = $bot;
+        $this->reader     = $reader;
+        $this->transcoder = $transcoder;
+    }
 
     /**
      * Returns the name of the type
@@ -125,12 +132,56 @@ abstract class AbstractType implements TypeInterface
     }
 
     /**
-     * Returns True, if the Browser should be banned
+     * (PHP 5 &gt;= 5.1.0)<br/>
+     * String representation of object
      *
-     * @return bool
+     * @link http://php.net/manual/en/serializable.serialize.php
+     *
+     * @return string the string representation of the object or null
      */
-    public function isBanned()
+    public function serialize()
     {
-        return $this->banned;
+        return serialize($this->toArray());
+    }
+
+    /**
+     * (PHP 5 &gt;= 5.1.0)<br/>
+     * Constructs the object
+     *
+     * @link http://php.net/manual/en/serializable.unserialize.php
+     *
+     * @param string $serialized <p>
+     *                           The string representation of the object.
+     *                           </p>
+     */
+    public function unserialize($serialized)
+    {
+        $data = unserialize($serialized);
+
+        $this->name       = isset($data['name']) ? $data['name'] : null;
+        $this->bot        = isset($data['bot']) ? $data['bot'] : false;
+        $this->reader     = isset($data['reader']) ? $data['reader'] : false;
+        $this->transcoder = isset($data['transcoder']) ? $data['transcoder'] : false;
+    }
+
+    /**
+     * @return string
+     */
+    public function toJson()
+    {
+        return json_encode($this->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'name'       => $this->name,
+            'bot'        => $this->bot,
+            'reader'     => $this->reader,
+            'transcoder' => $this->transcoder,
+        ];
     }
 }
