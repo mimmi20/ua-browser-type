@@ -2,11 +2,7 @@
 
 namespace UaBrowserTypeTest;
 
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
 use UaBrowserType\TypeFactory;
-use UaBrowserType\TypeLoader;
 
 /**
  * Test class for \BrowserDetector\Detector\Device\Mobile\GeneralMobile
@@ -24,47 +20,7 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $adapter      = new Local(__DIR__ . '/../cache/');
-        $cache        = new FilesystemCachePool(new Filesystem($adapter));
-        $cache->clear();
-        $loader       = new TypeLoader($cache);
-        $this->object = new TypeFactory($cache, $loader);
-    }
-
-    /**
-     * @uses UaBrowserType\Type::__construct
-     * @uses UaBrowserType\Type::getName
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @uses UaBrowserType\TypeLoader::init
-     * @uses UaBrowserType\TypeLoader::initCache
-     * @uses UaBrowserType\TypeLoader::has
-     * @uses UaBrowserType\TypeLoader::load
-     * @covers UaBrowserType\TypeFactory::__construct
-     * @covers UaBrowserType\TypeFactory::detect
-     */
-    public function testLoadUnknown()
-    {
-        $type = $this->object->detect('unknown');
-
-        self::assertInstanceOf('\UaBrowserType\Type', $type);
-        self::assertNull($type->getName());
-    }
-
-    /**
-     * @expectedException \BrowserDetector\Loader\NotFoundException
-     * @expectedExceptionMessage the browser type with key "does not exist" was not found
-     *
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @uses UaBrowserType\TypeLoader::init
-     * @uses UaBrowserType\TypeLoader::initCache
-     * @uses UaBrowserType\TypeLoader::has
-     * @uses UaBrowserType\TypeLoader::load
-     * @covers UaBrowserType\TypeFactory::__construct
-     * @covers UaBrowserType\TypeFactory::detect
-     */
-    public function testLoadNotAvailable()
-    {
-        $this->object->detect('does not exist');
+        $this->object = new TypeFactory();
     }
 
     /**
