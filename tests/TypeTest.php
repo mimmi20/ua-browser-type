@@ -31,23 +31,13 @@
 
 namespace UaBrowserTypeTest;
 
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
 use UaBrowserType\Type;
 use UaBrowserType\TypeFactory;
-use UaBrowserType\TypeLoader;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * tests the constructor and the getter
-     *
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::getName
-     * @covers UaBrowserType\Type::isBot
-     * @covers UaBrowserType\Type::isSyndicationReader
-     * @covers UaBrowserType\Type::isTranscoder
      */
     public function testSetterGetter()
     {
@@ -68,10 +58,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * tests the __toString function
-     *
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::__toString
-     * @covers UaBrowserType\Type::getName
      */
     public function testTostring()
     {
@@ -87,10 +73,6 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      * @param \UaBrowserType\Type $type
      *
      * @depends testSetterGetter
-     *
-     * @covers UaBrowserType\Type::toArray
-     * @covers UaBrowserType\Type::serialize
-     * @covers UaBrowserType\Type::unserialize
      */
     public function testSerialize(Type $type)
     {
@@ -103,24 +85,11 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
-     *
-     * @uses UaBrowserType\TypeFactory::__construct
-     * @uses UaBrowserType\TypeFactory::fromArray
-     * @uses UaBrowserType\TypeFactory::fromJson
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::toArray
-     * @covers UaBrowserType\Type::toJson
      */
     public function testTojson(Type $type)
     {
-        $adapter = new Local(__DIR__ . '/../cache/');
-        $cache   = new FilesystemCachePool(new Filesystem($adapter));
-        $cache->clear();
-        $loader  = new TypeLoader($cache);
-
         $json = $type->toJson();
-        self::assertEquals($type, (new TypeFactory($cache, $loader))->fromJson($json));
+        self::assertEquals($type, (new TypeFactory())->fromJson($json));
     }
 
     /**
@@ -128,21 +97,10 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      *
      * @param \UaBrowserType\Type $type
      * @depends testSetterGetter
-     *
-     * @uses UaBrowserType\TypeFactory::__construct
-     * @uses UaBrowserType\TypeFactory::fromArray
-     * @uses UaBrowserType\TypeLoader::__construct
-     * @covers UaBrowserType\Type::__construct
-     * @covers UaBrowserType\Type::toArray
      */
     public function testToarray(Type $type)
     {
-        $adapter = new Local(__DIR__ . '/../cache/');
-        $cache   = new FilesystemCachePool(new Filesystem($adapter));
-        $cache->clear();
-        $loader  = new TypeLoader($cache);
-
         $array = $type->toArray();
-        self::assertEquals($type, (new TypeFactory($cache, $loader))->fromArray($array));
+        self::assertEquals($type, (new TypeFactory())->fromArray($array));
     }
 }

@@ -31,17 +31,13 @@
 
 namespace UaBrowserType;
 
-use BrowserDetector\Factory\FactoryInterface;
-use BrowserDetector\Loader\LoaderInterface;
-use Psr\Cache\CacheItemPoolInterface;
-
 /**
  * @category  BrowserDetector
  *
  * @copyright 2012-2017 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
-class TypeFactory implements FactoryInterface
+class TypeFactory
 {
     const APPLICATION            = 'application';
     const BOT                    = 'bot';
@@ -59,38 +55,6 @@ class TypeFactory implements FactoryInterface
     const USERAGENT_ANONYMIZER   = 'useragent-anonymizer';
     const VALIDATOR              = 'validator';
     const WAP_BROWSER            = 'wap-browser';
-
-    /**
-     * @var \Psr\Cache\CacheItemPoolInterface|null
-     */
-    private $cache = null;
-
-    /**
-     * @var \BrowserDetector\Loader\LoaderInterface|null
-     */
-    private $loader = null;
-
-    /**
-     * @param \Psr\Cache\CacheItemPoolInterface       $cache
-     * @param \BrowserDetector\Loader\LoaderInterface $loader
-     */
-    public function __construct(CacheItemPoolInterface $cache, LoaderInterface $loader)
-    {
-        $this->cache  = $cache;
-        $this->loader = $loader;
-    }
-
-    /**
-     * Gets the information about the browser type
-     *
-     * @param string $type
-     *
-     * @return \UaBrowserType\TypeInterface
-     */
-    public function detect($type)
-    {
-        return $this->loader->load($type);
-    }
 
     /**
      * @param array $data

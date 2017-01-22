@@ -66,4 +66,14 @@ interface TypeInterface
      * @return bool
      */
     public function isTranscoder();
+
+    /**
+     * @return string
+     */
+    public function toJson();
+
+    /**
+     * @return array
+     */
+    public function toArray();
 }
