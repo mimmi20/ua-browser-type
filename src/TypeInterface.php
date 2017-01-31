@@ -40,7 +40,14 @@ namespace UaBrowserType;
 interface TypeInterface
 {
     /**
-     * Returns the name of the company
+     * Returns the type name of the browser
+     *
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * Returns the name of the browser
      *
      * @return string
      */

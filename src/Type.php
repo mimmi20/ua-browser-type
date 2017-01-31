@@ -40,6 +40,13 @@ namespace UaBrowserType;
 class Type implements TypeInterface, \Serializable
 {
     /**
+     * the type name of the browser
+     *
+     * @var string|null
+     */
+    private $type = null;
+
+    /**
      * the name of the browser
      *
      * @var string
@@ -68,13 +75,15 @@ class Type implements TypeInterface, \Serializable
     private $transcoder = null;
 
     /**
+     * @param string $type
      * @param string $name
      * @param bool   $bot
      * @param bool   $reader
      * @param bool   $transcoder
      */
-    public function __construct($name, $bot = false, $reader = false, $transcoder = false)
+    public function __construct($type, $name, $bot = false, $reader = false, $transcoder = false)
     {
+        $this->type       = $type;
         $this->name       = $name;
         $this->bot        = $bot;
         $this->reader     = $reader;
@@ -89,6 +98,16 @@ class Type implements TypeInterface, \Serializable
     public function __toString()
     {
         return (string) $this->getName();
+    }
+
+    /**
+     * Returns the type name of the browser
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
     /**
@@ -158,6 +177,7 @@ class Type implements TypeInterface, \Serializable
     {
         $data = unserialize($serialized);
 
+        $this->type       = isset($data['type']) ? $data['type'] : null;
         $this->name       = isset($data['name']) ? $data['name'] : null;
         $this->bot        = isset($data['bot']) ? $data['bot'] : false;
         $this->reader     = isset($data['reader']) ? $data['reader'] : false;
@@ -178,6 +198,7 @@ class Type implements TypeInterface, \Serializable
     public function toArray()
     {
         return [
+            'type'       => $this->type,
             'name'       => $this->name,
             'bot'        => $this->bot,
             'reader'     => $this->reader,

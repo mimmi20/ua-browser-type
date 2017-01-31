@@ -41,19 +41,21 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetterGetter()
     {
+        $type       = 'testType';
         $name       = 'test1';
         $bot        = true;
         $reader     = false;
         $transcoder = null;
 
-        $type = new Type($name, $bot, $reader, $transcoder);
+        $result = new Type($type, $name, $bot, $reader, $transcoder);
 
-        self::assertSame($name, $type->getName());
-        self::assertTrue($type->isBot());
-        self::assertFalse($type->isSyndicationReader());
-        self::assertNull($type->isTranscoder());
+        self::assertSame($type, $result->getType());
+        self::assertSame($name, $result->getName());
+        self::assertTrue($result->isBot());
+        self::assertFalse($result->isSyndicationReader());
+        self::assertNull($result->isTranscoder());
 
-        return $type;
+        return $result;
     }
 
     /**
@@ -61,8 +63,9 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTostring()
     {
+        $type = 'testType';
         $name = false;
-        $type = new Type($name);
+        $type = new Type($type, $name);
 
         self::assertSame('', (string) $type);
     }

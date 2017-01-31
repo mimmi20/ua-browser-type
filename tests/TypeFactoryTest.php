@@ -28,25 +28,28 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testFromArray()
     {
+        $type       = 'testType';
         $name       = 'test1';
         $bot        = true;
         $reader     = false;
         $transcoder = false;
 
         $data = [
+            'type'       => $type,
             'name'       => $name,
             'bot'        => $bot,
             'reader'     => $reader,
             'transcoder' => $transcoder,
         ];
 
-        $type = $this->object->fromArray($data);
+        $result = $this->object->fromArray($data);
 
-        self::assertInstanceOf('\UaBrowserType\Type', $type);
-        self::assertSame($name, $type->getName());
-        self::assertTrue($type->isBot());
-        self::assertFalse($type->isSyndicationReader());
-        self::assertFalse($type->isTranscoder());
+        self::assertInstanceOf('\UaBrowserType\Type', $result);
+        self::assertSame($type, $result->getType());
+        self::assertSame($name, $result->getName());
+        self::assertTrue($result->isBot());
+        self::assertFalse($result->isSyndicationReader());
+        self::assertFalse($result->isTranscoder());
     }
 
     /**
@@ -54,24 +57,27 @@ class TypeFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testFromJson()
     {
+        $type       = 'testType';
         $name       = 'test1';
         $bot        = true;
         $reader     = false;
         $transcoder = false;
 
         $data = [
+            'type'       => $type,
             'name'       => $name,
             'bot'        => $bot,
             'reader'     => $reader,
             'transcoder' => $transcoder,
         ];
 
-        $type = $this->object->fromJson(json_encode($data));
+        $result = $this->object->fromJson(json_encode($data));
 
-        self::assertInstanceOf('\UaBrowserType\Type', $type);
-        self::assertSame($name, $type->getName());
-        self::assertTrue($type->isBot());
-        self::assertFalse($type->isSyndicationReader());
-        self::assertFalse($type->isTranscoder());
+        self::assertInstanceOf('\UaBrowserType\Type', $result);
+        self::assertSame($type, $result->getType());
+        self::assertSame($name, $result->getName());
+        self::assertTrue($result->isBot());
+        self::assertFalse($result->isSyndicationReader());
+        self::assertFalse($result->isTranscoder());
     }
 }

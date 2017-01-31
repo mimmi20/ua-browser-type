@@ -63,12 +63,13 @@ class TypeFactory
      */
     public function fromArray(array $data)
     {
+        $type       = array_key_exists('type', $data) ? $data['type'] : null;
         $name       = array_key_exists('name', $data) ? $data['name'] : null;
         $bot        = array_key_exists('bot', $data) ? $data['bot'] : false;
         $reader     = array_key_exists('reader', $data) ? $data['reader'] : false;
         $transcoder = array_key_exists('transcoder', $data) ? $data['transcoder'] : false;
 
-        return new Type($name, $bot, $reader, $transcoder);
+        return new Type($type, $name, $bot, $reader, $transcoder);
     }
 
     /**
