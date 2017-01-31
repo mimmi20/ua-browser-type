@@ -33,7 +33,6 @@ namespace UaBrowserType;
 
 use BrowserDetector\Loader\LoaderInterface;
 use BrowserDetector\Loader\NotFoundException;
-use Psr\Cache\CacheItemInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 /**
@@ -61,22 +60,9 @@ class TypeLoader implements LoaderInterface
     }
 
     /**
-     * initializes cache
-     */
-    private function init()
-    {
-        $cacheInitializedId = hash('sha512', 'browser-type-cache is initialized');
-        $cacheInitialized   = $this->cache->getItem($cacheInitializedId);
-
-        if (!$cacheInitialized->isHit() || !$cacheInitialized->get()) {
-            $this->initCache($cacheInitialized);
-        }
-    }
-
-    /**
      * @param string $key
      *
-     * @return bool
+     * @return bool|null
      */
     public function has($key)
     {
@@ -107,6 +93,7 @@ class TypeLoader implements LoaderInterface
         $type = $cacheItem->get();
 
         return new Type(
+            $type->type,
             $type->name,
             $type->bot,
             $type->reader,
@@ -115,17 +102,18 @@ class TypeLoader implements LoaderInterface
     }
 
     /**
-     * @param \Psr\Cache\CacheItemInterface $cacheInitialized
+     * initializes cache
      */
-    private function initCache(CacheItemInterface $cacheInitialized)
+    private function init()
     {
-        static $types = null;
+        $cacheInitializedId = hash('sha512', 'browser-type-cache is initialized');
+        $cacheInitialized   = $this->cache->getItem($cacheInitializedId);
 
-        if (null === $types) {
-            $types = json_decode(file_get_contents(__DIR__ . '/../data/types.json'));
+        if ($cacheInitialized->isHit() && $cacheInitialized->get()) {
+            return;
         }
 
-        foreach ($types as $key => $data) {
+        foreach ($this->getTypes() as $key => $data) {
             $cacheItem = $this->cache->getItem(hash('sha512', 'browser-type-cache-' . $key));
             $cacheItem->set($data);
 
@@ -134,5 +122,21 @@ class TypeLoader implements LoaderInterface
 
         $cacheInitialized->set(true);
         $this->cache->save($cacheInitialized);
+    }
+
+    /**
+     * @return array[]
+     */
+    private function getTypes()
+    {
+        static $types = null;
+
+        if (null === $types) {
+            $types = json_decode(file_get_contents(__DIR__ . '/../data/types.json'));
+        }
+
+        foreach ($types as $key => $data) {
+            yield $key => $data;
+        }
     }
 }

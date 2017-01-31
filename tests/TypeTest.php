@@ -32,7 +32,6 @@
 namespace UaBrowserTypeTest;
 
 use UaBrowserType\Type;
-use UaBrowserType\TypeFactory;
 
 class TypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -41,66 +40,18 @@ class TypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetterGetter()
     {
+        $type       = 'testType';
         $name       = 'test1';
         $bot        = true;
         $reader     = false;
         $transcoder = null;
 
-        $type = new Type($name, $bot, $reader, $transcoder);
+        $result = new Type($type, $name, $bot, $reader, $transcoder);
 
-        self::assertSame($name, $type->getName());
-        self::assertTrue($type->isBot());
-        self::assertFalse($type->isSyndicationReader());
-        self::assertNull($type->isTranscoder());
-
-        return $type;
-    }
-
-    /**
-     * tests the __toString function
-     */
-    public function testTostring()
-    {
-        $name = false;
-        $type = new Type($name);
-
-        self::assertSame('', (string) $type);
-    }
-
-    /**
-     * tests the serialize and the unserialize functions
-     *
-     * @param \UaBrowserType\Type $type
-     *
-     * @depends testSetterGetter
-     */
-    public function testSerialize(Type $type)
-    {
-        $serialized = serialize($type);
-        self::assertEquals($type, unserialize($serialized));
-    }
-
-    /**
-     * tests the toJson function
-     *
-     * @param \UaBrowserType\Type $type
-     * @depends testSetterGetter
-     */
-    public function testTojson(Type $type)
-    {
-        $json = $type->toJson();
-        self::assertEquals($type, (new TypeFactory())->fromJson($json));
-    }
-
-    /**
-     * tests the toArray function
-     *
-     * @param \UaBrowserType\Type $type
-     * @depends testSetterGetter
-     */
-    public function testToarray(Type $type)
-    {
-        $array = $type->toArray();
-        self::assertEquals($type, (new TypeFactory())->fromArray($array));
+        self::assertSame($type, $result->getType());
+        self::assertSame($name, $result->getName());
+        self::assertTrue($result->isBot());
+        self::assertFalse($result->isSyndicationReader());
+        self::assertNull($result->isTranscoder());
     }
 }
