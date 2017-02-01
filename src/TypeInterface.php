@@ -49,7 +49,7 @@ interface TypeInterface
     /**
      * Returns the name of the browser
      *
-     * @return string
+     * @return string|null
      */
     public function getName();
 
