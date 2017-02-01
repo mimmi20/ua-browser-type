@@ -72,7 +72,7 @@ class Type implements TypeInterface
      *
      * @var bool
      */
-    private $transcoder = null;
+    private $transcoder = false;
 
     /**
      * @param string $type
@@ -81,7 +81,7 @@ class Type implements TypeInterface
      * @param bool   $reader
      * @param bool   $transcoder
      */
-    public function __construct($type, $name, $bot = false, $reader = false, $transcoder = false)
+    public function __construct($type, $name = null, $bot = false, $reader = false, $transcoder = false)
     {
         $this->type       = $type;
         $this->name       = $name;
@@ -103,7 +103,7 @@ class Type implements TypeInterface
     /**
      * Returns the name of the type
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {

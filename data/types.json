@@ -88,7 +88,7 @@
     "name": null,
     "bot": false,
     "reader": false,
-    "transcoder": null
+    "transcoder": false
   },
   "useragent-anonymizer": {
     "type": "useragent-anonymizer",
