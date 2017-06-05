@@ -13,7 +13,7 @@ namespace UaBrowserTypeTest;
 
 use UaBrowserType\Type;
 
-class TypeTest extends \PHPUnit_Framework_TestCase
+class TypeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * tests the constructor and the getter
