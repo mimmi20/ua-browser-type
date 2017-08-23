@@ -24,33 +24,33 @@ interface TypeInterface
      *
      * @return string
      */
-    public function getType();
+    public function getType(): string;
 
     /**
      * Returns the name of the browser
      *
      * @return string|null
      */
-    public function getName();
+    public function getName(): ?string;
 
     /**
      * Returns True, if the Browser is a Bot
      *
      * @return bool
      */
-    public function isBot();
+    public function isBot(): bool;
 
     /**
      * Returns True, if the Browser is a Syndication Reader
      *
      * @return bool
      */
-    public function isSyndicationReader();
+    public function isSyndicationReader(): bool;
 
     /**
      * Returns True, if the Browser uses a transcoding webservice
      *
      * @return bool
      */
-    public function isTranscoder();
+    public function isTranscoder(): bool;
 }

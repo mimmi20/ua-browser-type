@@ -24,7 +24,7 @@ class TypeTest extends \PHPUnit\Framework\TestCase
         $name       = 'test1';
         $bot        = true;
         $reader     = false;
-        $transcoder = null;
+        $transcoder = false;
 
         $result = new Type($type, $name, $bot, $reader, $transcoder);
 
@@ -32,6 +32,6 @@ class TypeTest extends \PHPUnit\Framework\TestCase
         self::assertSame($name, $result->getName());
         self::assertTrue($result->isBot());
         self::assertFalse($result->isSyndicationReader());
-        self::assertNull($result->isTranscoder());
+        self::assertFalse($result->isTranscoder());
     }
 }

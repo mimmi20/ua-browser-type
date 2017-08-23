@@ -33,9 +33,9 @@ class TypeLoader implements LoaderInterface
     /**
      * @param string $key
      *
-     * @return bool|null
+     * @return bool
      */
-    public function has($key)
+    public function has(string $key): bool
     {
         $this->init();
 
@@ -49,7 +49,7 @@ class TypeLoader implements LoaderInterface
      *
      * @return \UaBrowserType\TypeInterface
      */
-    public function load($key)
+    public function load(string $key): TypeInterface
     {
         $this->init();
 
@@ -71,7 +71,7 @@ class TypeLoader implements LoaderInterface
     /**
      * initializes cache
      */
-    private function init()
+    private function init(): void
     {
         $this->types = [];
 
@@ -83,7 +83,7 @@ class TypeLoader implements LoaderInterface
     /**
      * @return array[]
      */
-    private function getTypes()
+    private function getTypes(): \Generator
     {
         static $types = null;
 
