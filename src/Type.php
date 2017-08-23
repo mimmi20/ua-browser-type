@@ -55,14 +55,19 @@ class Type implements TypeInterface
     private $transcoder = false;
 
     /**
-     * @param string $type
-     * @param string $name
-     * @param bool   $bot
-     * @param bool   $reader
-     * @param bool   $transcoder
+     * @param string      $type
+     * @param string|null $name
+     * @param bool        $bot
+     * @param bool        $reader
+     * @param bool        $transcoder
      */
-    public function __construct($type, $name = null, $bot = false, $reader = false, $transcoder = false)
-    {
+    public function __construct(
+        string $type,
+        ?string $name = null,
+        bool $bot = false,
+        bool $reader = false,
+        bool $transcoder = false
+    ) {
         $this->type       = $type;
         $this->name       = $name;
         $this->bot        = $bot;
@@ -75,7 +80,7 @@ class Type implements TypeInterface
      *
      * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -85,7 +90,7 @@ class Type implements TypeInterface
      *
      * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -95,7 +100,7 @@ class Type implements TypeInterface
      *
      * @return bool
      */
-    public function isBot()
+    public function isBot(): bool
     {
         return $this->bot;
     }
@@ -105,7 +110,7 @@ class Type implements TypeInterface
      *
      * @return bool
      */
-    public function isSyndicationReader()
+    public function isSyndicationReader(): bool
     {
         return $this->reader;
     }
@@ -115,7 +120,7 @@ class Type implements TypeInterface
      *
      * @return bool
      */
-    public function isTranscoder()
+    public function isTranscoder(): bool
     {
         return $this->transcoder;
     }
