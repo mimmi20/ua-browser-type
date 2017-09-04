@@ -22,14 +22,14 @@ class Type implements TypeInterface
     /**
      * the type name of the browser
      *
-     * @var string|null
+     * @var string
      */
-    private $type = null;
+    private $type;
 
     /**
      * the name of the browser
      *
-     * @var string
+     * @var string|null
      */
     private $name = null;
 
