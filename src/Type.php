@@ -31,7 +31,7 @@ class Type implements TypeInterface
      *
      * @var string|null
      */
-    private $name = null;
+    private $name;
 
     /**
      * the Browser is a Bot
