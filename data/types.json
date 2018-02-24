@@ -44,8 +44,8 @@
   "feed-reader": {
     "type": "feed-reader",
     "name": "Feed Reader",
-    "bot": true,
-    "reader": false,
+    "bot": false,
+    "reader": true,
     "transcoder": false
   },
   "multimedia-player": {
