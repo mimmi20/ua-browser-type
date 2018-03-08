@@ -22,26 +22,26 @@ final class UseragentAnonymizer implements TypeInterface
      *
      * @var string|null
      */
-    public const NAME = 'Useragent Anonymizer';
+    private const NAME = 'Useragent Anonymizer';
 
     /**
      * the Browser is a Bot
      *
      * @var bool
      */
-    public const BOT = true;
+    private const BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      *
      * @var bool
      */
-    public const READER = false;
+    private const READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      *
      * @var bool
      */
-    public const TRANSCODER = false;
+    private const TRANSCODER = false;
 }

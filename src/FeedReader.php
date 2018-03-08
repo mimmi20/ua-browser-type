@@ -22,26 +22,26 @@ final class FeedReader implements TypeInterface
      *
      * @var string|null
      */
-    public const NAME = 'Feed Reader';
+    private const NAME = 'Feed Reader';
 
     /**
      * the Browser is a Bot
      *
      * @var bool
      */
-    public const BOT = false;
+    private const BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      *
      * @var bool
      */
-    public const READER = true;
+    private const READER = true;
 
     /**
      * the Browser uses a transcoding webservice
      *
      * @var bool
      */
-    public const TRANSCODER = false;
+    private const TRANSCODER = false;
 }
