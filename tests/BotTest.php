@@ -11,9 +11,10 @@
 declare(strict_types = 1);
 namespace UaBrowserTypeTest;
 
-use UaBrowserType\Type;
+use PHPUnit\Framework\TestCase;
+use UaBrowserType\Bot;
 
-class TypeTest extends \PHPUnit\Framework\TestCase
+class BotTest extends TestCase
 {
     /**
      * tests the constructor and the getter
@@ -22,13 +23,10 @@ class TypeTest extends \PHPUnit\Framework\TestCase
      */
     public function testSetterGetter(): void
     {
-        $type       = 'testType';
-        $name       = 'test1';
-        $bot        = true;
-        $reader     = false;
-        $transcoder = false;
+        $type = 'bot';
+        $name = 'Bot/Crawler';
 
-        $result = new Type($type, $name, $bot, $reader, $transcoder);
+        $result = new Bot();
 
         self::assertSame($type, $result->getType());
         self::assertSame($name, $result->getName());

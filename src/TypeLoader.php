@@ -24,43 +24,24 @@ use BrowserDetector\Loader\NotFoundException;
  */
 class TypeLoader implements LoaderInterface
 {
-    /**
-     * @var \stdClass[]
-     */
-    private $types = [];
-
-    /**
-     * @var self|null
-     */
-    private static $instance;
-
-    /**
-     * @return self
-     */
-    private function __construct()
-    {
-        // nothing to do here
-    }
-
-    /**
-     * @return self
-     */
-    public static function getInstance()
-    {
-        if (null === self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    /**
-     * @return void
-     */
-    public static function resetInstance(): void
-    {
-        self::$instance = null;
-    }
+    private const OPTIONS = [
+        Application::TYPE          => Application::class,
+        Bot::TYPE                  => Bot::class,
+        BotSyndicationReader::TYPE => BotSyndicationReader::class,
+        BotTrancoder::TYPE         => BotTrancoder::class,
+        Browser::TYPE              => Browser::class,
+        EmailClient::TYPE          => EmailClient::class,
+        FeedReader::TYPE           => FeedReader::class,
+        MultimediaPlayer::TYPE     => MultimediaPlayer::class,
+        OfflineBrowser::TYPE       => OfflineBrowser::class,
+        Pim::TYPE                  => Pim::class,
+        Tool::TYPE                 => Tool::class,
+        Transcoder::TYPE           => Transcoder::class,
+        Unknown::TYPE              => Unknown::class,
+        UseragentAnonymizer::TYPE  => UseragentAnonymizer::class,
+        Validator::TYPE            => Validator::class,
+        WapBrowser::TYPE           => WapBrowser::class,
+    ];
 
     /**
      * @param string $key
@@ -69,9 +50,7 @@ class TypeLoader implements LoaderInterface
      */
     public function has(string $key): bool
     {
-        $this->init();
-
-        return array_key_exists($key, $this->types);
+        return array_key_exists($key, self::OPTIONS);
     }
 
     /**
@@ -83,50 +62,12 @@ class TypeLoader implements LoaderInterface
      */
     public function load(string $key): TypeInterface
     {
-        $this->init();
-
         if (!$this->has($key)) {
             throw new NotFoundException('the browser type with key "' . $key . '" was not found');
         }
 
-        $type = $this->types[$key];
+        $class = self::OPTIONS[$key];
 
-        return new Type(
-            $type->type,
-            $type->name,
-            $type->bot,
-            $type->reader,
-            $type->transcoder
-        );
-    }
-
-    /**
-     * initializes cache
-     *
-     * @return void
-     */
-    private function init(): void
-    {
-        $this->types = [];
-
-        foreach ($this->getTypes() as $key => $data) {
-            $this->types[$key] = $data;
-        }
-    }
-
-    /**
-     * @return \Generator|\stdClass[]
-     */
-    private function getTypes(): \Generator
-    {
-        static $types = null;
-
-        if (null === $types) {
-            $types = json_decode(file_get_contents(__DIR__ . '/../data/types.json'), false);
-        }
-
-        foreach ($types as $key => $data) {
-            yield $key => $data;
-        }
+        return new $class();
     }
 }

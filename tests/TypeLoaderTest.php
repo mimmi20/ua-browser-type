@@ -11,12 +11,15 @@
 declare(strict_types = 1);
 namespace UaBrowserTypeTest;
 
+use BrowserDetector\Loader\NotFoundException;
+use PHPUnit\Framework\TestCase;
 use UaBrowserType\TypeLoader;
+use UaBrowserType\Unknown;
 
 /**
  * Test class for \BrowserDetector\Loader\BrowserLoader
  */
-class TypeLoaderTest extends \PHPUnit\Framework\TestCase
+class TypeLoaderTest extends TestCase
 {
     /**
      * @var \UaBrowserType\TypeLoader
@@ -31,18 +34,7 @@ class TypeLoaderTest extends \PHPUnit\Framework\TestCase
      */
     protected function setUp(): void
     {
-        $this->object = TypeLoader::getInstance();
-    }
-
-    /**
-     * Tears down the fixture, for example, close a network connection.
-     * This method is called after a test is executed.
-     *
-     * @return void
-     */
-    protected function tearDown(): void
-    {
-        TypeLoader::resetInstance();
+        $this->object = new TypeLoader();
     }
 
     /**
@@ -56,11 +48,19 @@ class TypeLoaderTest extends \PHPUnit\Framework\TestCase
     /**
      * @return void
      */
+    public function testHasNotWong(): void
+    {
+        self::assertFalse($this->object->has('does not exist'));
+    }
+
+    /**
+     * @return void
+     */
     public function testLoadUnknown(): void
     {
         $type = $this->object->load('unknown');
 
-        self::assertInstanceOf('\UaBrowserType\Type', $type);
+        self::assertInstanceOf(Unknown::class, $type);
         self::assertNull($type->getName());
     }
 
@@ -69,7 +69,7 @@ class TypeLoaderTest extends \PHPUnit\Framework\TestCase
      */
     public function testLoadNotAvailable(): void
     {
-        $this->expectException('\BrowserDetector\Loader\NotFoundException');
+        $this->expectException(NotFoundException::class);
         $this->expectExceptionMessage('the browser type with key "does not exist" was not found');
 
         $this->object->load('does not exist');
