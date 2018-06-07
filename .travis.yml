@@ -55,7 +55,7 @@ jobs:
         - echo 'opcache.enable=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - echo 'opcache.enable_cli=1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
         - travis_retry composer self-update
-      script: vendor/bin/phpunit --colors --columns 117 --coverage-clover=clover.xml --coverage-text
+      script: vendor/bin/phpunit --colors --coverage-clover=clover.xml --coverage-text
       after_success:
         - wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.2/coveralls.phar && php -n coveralls.phar --verbose --coverage_clover=clover.xml
         - bash <(curl -s https://codecov.io/bash) -f clover.xml -F phpunit
@@ -63,8 +63,9 @@ jobs:
     - stage: composer validate
       php: 7.1
       env: COMPOSER_FLAGS=""
-      install: skip
-      script: composer validate
+      script:
+        - composer validate
+        - composer normalize --dry-run
 
     - stage: static code analysis
       php: 7.1

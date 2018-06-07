@@ -29,7 +29,7 @@ final class MultimediaPlayer implements TypeInterface
      *
      * @var bool
      */
-    private const BOT = true;
+    private const BOT = false;
 
     /**
      * the Browser is a Syndication Reader
