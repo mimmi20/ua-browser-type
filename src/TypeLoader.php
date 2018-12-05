@@ -22,7 +22,7 @@ use BrowserDetector\Loader\NotFoundException;
  * @copyright 2012-2016 Thomas Mueller
  * @license   http://www.opensource.org/licenses/MIT MIT License
  */
-class TypeLoader implements LoaderInterface
+final class TypeLoader implements LoaderInterface
 {
     private const OPTIONS = [
         Application::TYPE          => Application::class,

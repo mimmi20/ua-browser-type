@@ -14,7 +14,7 @@ namespace UaBrowserTypeTest;
 use PHPUnit\Framework\TestCase;
 use UaBrowserType\Bot;
 
-class BotTest extends TestCase
+final class BotTest extends TestCase
 {
     /**
      * tests the constructor and the getter
