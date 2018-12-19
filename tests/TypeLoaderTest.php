@@ -16,9 +16,6 @@ use PHPUnit\Framework\TestCase;
 use UaBrowserType\TypeLoader;
 use UaBrowserType\Unknown;
 
-/**
- * Test class for \BrowserDetector\Loader\BrowserLoader
- */
 final class TypeLoaderTest extends TestCase
 {
     /**
