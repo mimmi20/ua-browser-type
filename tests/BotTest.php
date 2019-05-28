@@ -19,6 +19,9 @@ final class BotTest extends TestCase
     /**
      * tests the constructor and the getter
      *
+     * @throws \PHPUnit\Framework\ExpectationFailedException
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     *
      * @return void
      */
     public function testSetterGetter(): void
@@ -28,10 +31,10 @@ final class BotTest extends TestCase
 
         $result = new Bot();
 
-        self::assertSame($type, $result->getType());
-        self::assertSame($name, $result->getName());
-        self::assertTrue($result->isBot());
-        self::assertFalse($result->isSyndicationReader());
-        self::assertFalse($result->isTranscoder());
+        static::assertSame($type, $result->getType());
+        static::assertSame($name, $result->getName());
+        static::assertTrue($result->isBot());
+        static::assertFalse($result->isSyndicationReader());
+        static::assertFalse($result->isTranscoder());
     }
 }
