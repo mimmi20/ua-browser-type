@@ -292,36 +292,6 @@ stages:
 #          - script: vendor/bin/phpunit -c phpunit.xml --colors --coverage-clover=clover.xml --coverage-text
 #            displayName: 'run phpunit'
 
-  - stage: integration_tests
-    displayName: 'Integration Tests'
-    dependsOn:
-#      - tests
-      - static_code_analysis
-      - coding_standards
-    jobs:
-      - job: integration_tests
-        displayName: 'Integration Tests'
-        variables:
-          phpVersion: 7.1
-        pool:
-          vmImage: 'ubuntu-16.04' # ubuntu-latest
-        steps:
-          - script: |
-              sudo rm /etc/php/$(phpVersion)/cli/conf.d/20-xdebug.ini
-              sudo update-alternatives --set php /usr/bin/php$(phpVersion)
-              sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
-              sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
-              sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
-              sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
-              php -version
-            displayName: 'Use PHP version $(phpVersion)'
-          - script: composer self-update
-            displayName: 'composer self-update'
-          - script: composer update --optimize-autoloader --prefer-dist --prefer-stable --no-progress --no-interaction --no-suggest -vv
-            displayName: 'composer update'
-          - script: vendor/bin/phpunit -c tests/phpunit-integration.xml --no-coverage --colors --verbose
-            displayName: 'run phpunit'
-
 #  - stage: mutation_tests
 #    displayName: 'Mutation Tests'
 #    dependsOn: tests
