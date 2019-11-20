@@ -31,10 +31,10 @@ final class BotTest extends TestCase
 
         $result = new Bot();
 
-        static::assertSame($type, $result->getType());
-        static::assertSame($name, $result->getName());
-        static::assertTrue($result->isBot());
-        static::assertFalse($result->isSyndicationReader());
-        static::assertFalse($result->isTranscoder());
+        self::assertSame($type, $result->getType());
+        self::assertSame($name, $result->getName());
+        self::assertTrue($result->isBot());
+        self::assertFalse($result->isSyndicationReader());
+        self::assertFalse($result->isTranscoder());
     }
 }
