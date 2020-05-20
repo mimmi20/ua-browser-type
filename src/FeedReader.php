@@ -19,29 +19,21 @@ final class FeedReader implements TypeInterface
 
     /**
      * the name of the browser
-     *
-     * @var string|null
      */
     private const NAME = 'Feed Reader';
 
     /**
      * the Browser is a Bot
-     *
-     * @var bool
      */
     private const BOT = false;
 
     /**
      * the Browser is a Syndication Reader
-     *
-     * @var bool
      */
     private const READER = true;
 
     /**
      * the Browser uses a transcoding webservice
-     *
-     * @var bool
      */
     private const TRANSCODER = false;
 }

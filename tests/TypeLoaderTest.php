@@ -18,9 +18,7 @@ use UaBrowserType\Unknown;
 
 final class TypeLoaderTest extends TestCase
 {
-    /**
-     * @var \UaBrowserType\TypeLoader
-     */
+    /** @var \UaBrowserType\TypeLoader */
     private $object;
 
     /**

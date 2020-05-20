@@ -19,29 +19,21 @@ final class SeoAnalytics implements TypeInterface
 
     /**
      * the name of the browser
-     *
-     * @var string|null
      */
     private const NAME = 'SEO & Analytics';
 
     /**
      * the Browser is a Bot
-     *
-     * @var bool
      */
     private const BOT = true;
 
     /**
      * the Browser is a Syndication Reader
-     *
-     * @var bool
      */
     private const READER = false;
 
     /**
      * the Browser uses a transcoding webservice
-     *
-     * @var bool
      */
     private const TRANSCODER = false;
 }
