@@ -9,9 +9,12 @@
  */
 
 declare(strict_types = 1);
+
 namespace UaBrowserTypeTest;
 
+use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
+use SebastianBergmann\RecursionContext\InvalidArgumentException;
 use UaBrowserType\Bot;
 
 final class BotTest extends TestCase
@@ -19,10 +22,8 @@ final class BotTest extends TestCase
     /**
      * tests the constructor and the getter
      *
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     *
-     * @return void
+     * @throws ExpectationFailedException
+     * @throws InvalidArgumentException
      */
     public function testSetterGetter(): void
     {

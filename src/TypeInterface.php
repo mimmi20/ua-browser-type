@@ -9,42 +9,33 @@
  */
 
 declare(strict_types = 1);
+
 namespace UaBrowserType;
 
 interface TypeInterface
 {
     /**
      * Returns the type name of the browser
-     *
-     * @return string
      */
     public function getType(): string;
 
     /**
      * Returns the name of the browser
-     *
-     * @return string|null
      */
     public function getName(): ?string;
 
     /**
      * Returns True, if the Browser is a Bot
-     *
-     * @return bool
      */
     public function isBot(): bool;
 
     /**
      * Returns True, if the Browser is a Syndication Reader
-     *
-     * @return bool
      */
     public function isSyndicationReader(): bool;
 
     /**
      * Returns True, if the Browser uses a transcoding webservice
-     *
-     * @return bool
      */
     public function isTranscoder(): bool;
 }
