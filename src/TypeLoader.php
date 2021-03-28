@@ -9,9 +9,12 @@
  */
 
 declare(strict_types = 1);
+
 namespace UaBrowserType;
 
 use BrowserDetector\Loader\NotFoundException;
+
+use function array_key_exists;
 
 final class TypeLoader implements TypeLoaderInterface
 {
@@ -40,22 +43,13 @@ final class TypeLoader implements TypeLoaderInterface
         WapBrowser::TYPE => WapBrowser::class,
     ];
 
-    /**
-     * @param string $key
-     *
-     * @return bool
-     */
     public function has(string $key): bool
     {
         return array_key_exists($key, self::OPTIONS);
     }
 
     /**
-     * @param string $key
-     *
-     * @throws \BrowserDetector\Loader\NotFoundException
-     *
-     * @return \UaBrowserType\TypeInterface
+     * @throws NotFoundException
      */
     public function load(string $key): TypeInterface
     {

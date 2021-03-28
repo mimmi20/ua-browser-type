@@ -9,6 +9,7 @@
  */
 
 declare(strict_types = 1);
+
 namespace UaBrowserType;
 
 final class Browser implements TypeInterface
