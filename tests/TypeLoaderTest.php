@@ -12,11 +12,11 @@ declare(strict_types = 1);
 
 namespace UaBrowserTypeTest;
 
-use BrowserDetector\Loader\NotFoundException;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 use SebastianBergmann\RecursionContext\InvalidArgumentException;
+use UaBrowserType\NotFoundException;
 use UaBrowserType\TypeLoader;
 use UaBrowserType\Unknown;
 

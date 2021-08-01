@@ -12,8 +12,6 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
-use BrowserDetector\Loader\NotFoundException;
-
 use function array_key_exists;
 
 final class TypeLoader implements TypeLoaderInterface
