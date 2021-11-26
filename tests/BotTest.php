@@ -19,6 +19,9 @@ use UaBrowserType\Bot;
 
 final class BotTest extends TestCase
 {
+    private const TYPE = 'bot';
+    private const NAME = 'Bot/Crawler';
+
     /**
      * tests the constructor and the getter
      *
@@ -27,13 +30,10 @@ final class BotTest extends TestCase
      */
     public function testSetterGetter(): void
     {
-        $type = 'bot';
-        $name = 'Bot/Crawler';
-
         $result = new Bot();
 
-        self::assertSame($type, $result->getType());
-        self::assertSame($name, $result->getName());
+        self::assertSame(self::TYPE, $result->getType());
+        self::assertSame(self::NAME, $result->getName());
         self::assertTrue($result->isBot());
         self::assertFalse($result->isSyndicationReader());
         self::assertFalse($result->isTranscoder());
