@@ -2,7 +2,7 @@
 /**
  * This file is part of the ua-browser-type package.
  *
- * Copyright (c) 2015-2021, Thomas Mueller <mimmi20@live.de>
+ * Copyright (c) 2015-2023, Thomas Mueller <mimmi20@live.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,6 +16,8 @@ trait BrowserType
 {
     /**
      * Returns the type name of the browser
+     *
+     * @throws void
      */
     public function getType(): string
     {
@@ -24,14 +26,18 @@ trait BrowserType
 
     /**
      * Returns the name of the type
+     *
+     * @throws void
      */
-    public function getName(): ?string
+    public function getName(): string | null
     {
         return self::NAME;
     }
 
     /**
      * Returns True, if the Browser is a Bot
+     *
+     * @throws void
      */
     public function isBot(): bool
     {
@@ -40,6 +46,8 @@ trait BrowserType
 
     /**
      * Returns True, if the Browser is a Syndication Reader
+     *
+     * @throws void
      */
     public function isSyndicationReader(): bool
     {
@@ -48,6 +56,8 @@ trait BrowserType
 
     /**
      * Returns True, if the Browser uses a transcoding webservice
+     *
+     * @throws void
      */
     public function isTranscoder(): bool
     {

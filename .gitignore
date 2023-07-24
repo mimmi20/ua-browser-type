@@ -6,9 +6,6 @@
 vendor/
 composer.phar
 composer.lock
-.php-cs-fixer.cache
-clover.xml
-infection-*.log
 build/build*/
 error.log
 ergebnis.txt
@@ -20,6 +17,11 @@ cache/*
 !cache/.gitkeep
 tests/temp/*.php
 tests/temp/*.ini
+.php-cs-fixer.cache
 .phplint-cache
 .phpunit.result.cache
+.phpcs.cache
+infection-*.log
 rewrite*.php
+.reports/
+*.bak
