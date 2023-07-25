@@ -2,7 +2,7 @@
 /**
  * This file is part of the ua-browser-type package.
  *
- * Copyright (c) 2015-2021, Thomas Mueller <mimmi20@live.de>
+ * Copyright (c) 2015-2023, Thomas Mueller <mimmi20@live.de>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ namespace UaBrowserTypeTest;
 
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
-use SebastianBergmann\RecursionContext\InvalidArgumentException;
 use UaBrowserType\Bot;
 
 final class BotTest extends TestCase
@@ -23,7 +22,6 @@ final class BotTest extends TestCase
      * tests the constructor and the getter
      *
      * @throws ExpectationFailedException
-     * @throws InvalidArgumentException
      */
     public function testSetterGetter(): void
     {
