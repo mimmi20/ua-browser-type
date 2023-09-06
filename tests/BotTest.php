@@ -26,7 +26,7 @@ final class BotTest extends TestCase
     public function testSetterGetter(): void
     {
         $type = 'bot';
-        $name = 'Bot/Crawler';
+        $name = 'Bot';
 
         $result = new Bot();
 
