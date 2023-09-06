@@ -12,21 +12,21 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
-final class SeoAnalytics implements TypeInterface
+final class SecurityChecker implements TypeInterface
 {
     use BrowserType;
 
-    public const TYPE = 'seo-analytics';
+    public const TYPE = 'security-checker';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'SEO & Analytics';
+    private const NAME = 'Security Checker';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const BOT = true;
 
     /**
      * the Browser is a Syndication Reader

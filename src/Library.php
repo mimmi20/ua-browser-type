@@ -26,7 +26,7 @@ final class Library implements TypeInterface
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const BOT = false;
 
     /**
      * the Browser is a Syndication Reader

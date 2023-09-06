@@ -12,21 +12,21 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
-final class SeoAnalytics implements TypeInterface
+final class ServiceAgent implements TypeInterface
 {
     use BrowserType;
 
-    public const TYPE = 'seo-analytics';
+    public const TYPE = 'service-agent';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'SEO & Analytics';
+    private const NAME = 'Service Agent';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const BOT = true;
 
     /**
      * the Browser is a Syndication Reader
