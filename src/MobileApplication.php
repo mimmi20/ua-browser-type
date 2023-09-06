@@ -12,16 +12,16 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
-final class SeoAnalytics implements TypeInterface
+final class MobileApplication implements TypeInterface
 {
     use BrowserType;
 
-    public const TYPE = 'seo-analytics';
+    public const TYPE = 'mobile-application';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'SEO & Analytics';
+    private const NAME = 'Mobile Application';
 
     /**
      * the Browser is a Bot

@@ -21,7 +21,7 @@ final class Bot implements TypeInterface
     /**
      * the name of the browser
      */
-    private const NAME = 'Bot/Crawler';
+    private const NAME = 'Bot';
 
     /**
      * the Browser is a Bot
