@@ -183,7 +183,6 @@ jobs:
 
       - name: "Upload coverage to Codeclimate"
         uses: "paambaati/codeclimate-action@v5.0.0"
-        if: inputs.upload-codeclimate == true
         env:
           CC_TEST_REPORTER_ID: "${{ secrets.CODECLIMATE_API_KEY }}"
         with:
