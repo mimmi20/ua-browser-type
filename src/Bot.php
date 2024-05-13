@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Bot implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'bot';
 

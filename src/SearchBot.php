@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class SearchBot implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'search-bot';
 

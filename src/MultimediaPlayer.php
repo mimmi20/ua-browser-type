@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class MultimediaPlayer implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'multimedia-player';
 

@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Tool implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'tool';
 

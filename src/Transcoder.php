@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Transcoder implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'transcoder';
 

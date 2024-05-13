@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class FeedReader implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'feed-reader';
 

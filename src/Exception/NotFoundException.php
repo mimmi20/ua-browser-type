@@ -10,7 +10,7 @@
 
 declare(strict_types = 1);
 
-namespace UaBrowserType;
+namespace UaBrowserType\Exception;
 
 use UnexpectedValueException;
 

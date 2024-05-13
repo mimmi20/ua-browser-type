@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class LinkChecker implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'link-checker';
 

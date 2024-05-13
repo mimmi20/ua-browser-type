@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Unknown implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'unknown';
 

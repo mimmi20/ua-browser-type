@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class BotSyndicationReader implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'bot-syndication-reader';
 

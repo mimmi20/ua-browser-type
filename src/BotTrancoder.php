@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class BotTrancoder implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'bot-trancoder';
 

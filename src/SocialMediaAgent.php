@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class SocialMediaAgent implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'social-media-agent';
 

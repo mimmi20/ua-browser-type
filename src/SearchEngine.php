@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class SearchEngine implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'search-engine';
 

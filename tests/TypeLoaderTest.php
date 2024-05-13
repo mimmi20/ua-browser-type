@@ -15,7 +15,7 @@ namespace UaBrowserTypeTest;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
-use UaBrowserType\NotFoundException;
+use UaBrowserType\Exception\NotFoundException;
 use UaBrowserType\TypeLoader;
 use UaBrowserType\Unknown;
 

@@ -12,6 +12,8 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
+use UaBrowserType\Exception\NotFoundException;
+
 interface TypeLoaderInterface
 {
     /** @throws NotFoundException */

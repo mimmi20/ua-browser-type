@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Application implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'application';
 
