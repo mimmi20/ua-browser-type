@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class SecurityChecker implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'security-checker';
 

@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class Pim implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'pim';
 

@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class WapBrowser implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'wap-browser';
 

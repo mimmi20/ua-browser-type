@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class SeoAnalytics implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'seo-analytics';
 

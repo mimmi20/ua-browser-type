@@ -14,7 +14,7 @@ namespace UaBrowserType;
 
 final class OfflineBrowser implements TypeInterface
 {
-    use BrowserType;
+    use BrowserTypeTrait;
 
     public const TYPE = 'offline-browser';
 

@@ -12,7 +12,7 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
-trait BrowserType
+trait BrowserTypeTrait
 {
     /**
      * Returns the type name of the browser

@@ -12,6 +12,8 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
+use UaBrowserType\Exception\NotFoundException;
+
 use function array_key_exists;
 
 final class TypeLoader implements TypeLoaderInterface
@@ -48,7 +50,11 @@ final class TypeLoader implements TypeLoaderInterface
         WapBrowser::TYPE => WapBrowser::class,
     ];
 
-    /** @throws void */
+    /**
+     * @throws void
+     *
+     * @api
+     */
     public function has(string $key): bool
     {
         return array_key_exists($key, self::OPTIONS);
