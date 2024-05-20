@@ -35,9 +35,6 @@ parameters:
   # reports function and method calls with incorrect name case
   checkFunctionNameCase: true
 
-  # it requires type variables always be specified in typehints
-  checkGenericClassInNonGenericObjectType: true
-
   # be strict about values with an unspecified (implicit mixed) type
   checkImplicitMixed: false
 
