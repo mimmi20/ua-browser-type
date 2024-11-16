@@ -16,25 +16,25 @@ final class Library implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'library';
+    public const string TYPE = 'library';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Library';
+    private const string NAME = 'Library';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

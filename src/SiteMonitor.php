@@ -16,25 +16,25 @@ final class SiteMonitor implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'site-monitor';
+    public const string TYPE = 'site-monitor';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Site Monitor';
+    private const string NAME = 'Site Monitor';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

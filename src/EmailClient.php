@@ -16,25 +16,25 @@ final class EmailClient implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'email-client';
+    public const string TYPE = 'email-client';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Email Client';
+    private const string NAME = 'Email Client';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

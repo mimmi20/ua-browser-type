@@ -16,25 +16,25 @@ final class DownloadManager implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'download-managers';
+    public const string TYPE = 'download-managers';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Download Manager';
+    private const string NAME = 'Download Manager';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

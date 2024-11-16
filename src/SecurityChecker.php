@@ -16,25 +16,25 @@ final class SecurityChecker implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'security-checker';
+    public const string TYPE = 'security-checker';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Security Checker';
+    private const string NAME = 'Security Checker';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

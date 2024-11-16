@@ -16,25 +16,25 @@ final class MultimediaPlayer implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'multimedia-player';
+    public const string TYPE = 'multimedia-player';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Multimedia Player';
+    private const string NAME = 'Multimedia Player';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

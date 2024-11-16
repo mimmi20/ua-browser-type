@@ -16,25 +16,25 @@ final class FeedReader implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'feed-reader';
+    public const string TYPE = 'feed-reader';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Feed Reader';
+    private const string NAME = 'Feed Reader';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = true;
+    private const bool READER = true;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

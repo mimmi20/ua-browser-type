@@ -16,25 +16,25 @@ final class Unknown implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'unknown';
+    public const string TYPE = 'unknown';
 
     /**
      * the name of the browser
      */
-    private const NAME = null;
+    private const null NAME = null;
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

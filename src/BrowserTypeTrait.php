@@ -12,6 +12,8 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
+use Override;
+
 trait BrowserTypeTrait
 {
     /**
@@ -19,6 +21,7 @@ trait BrowserTypeTrait
      *
      * @throws void
      */
+    #[Override]
     public function getType(): string
     {
         return self::TYPE;
@@ -29,6 +32,7 @@ trait BrowserTypeTrait
      *
      * @throws void
      */
+    #[Override]
     public function getName(): string | null
     {
         return self::NAME;
@@ -39,6 +43,7 @@ trait BrowserTypeTrait
      *
      * @throws void
      */
+    #[Override]
     public function isBot(): bool
     {
         return self::BOT;
@@ -49,6 +54,7 @@ trait BrowserTypeTrait
      *
      * @throws void
      */
+    #[Override]
     public function isSyndicationReader(): bool
     {
         return self::READER;
@@ -59,6 +65,7 @@ trait BrowserTypeTrait
      *
      * @throws void
      */
+    #[Override]
     public function isTranscoder(): bool
     {
         return self::TRANSCODER;

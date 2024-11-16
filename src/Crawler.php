@@ -16,25 +16,25 @@ final class Crawler implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'crawler';
+    public const string TYPE = 'crawler';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Crawler';
+    private const string NAME = 'Crawler';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

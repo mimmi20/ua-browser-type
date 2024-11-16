@@ -16,25 +16,25 @@ final class Transcoder implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'transcoder';
+    public const string TYPE = 'transcoder';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Browser';
+    private const string NAME = 'Browser';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = true;
+    private const bool TRANSCODER = true;
 }
