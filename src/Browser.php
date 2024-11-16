@@ -16,25 +16,25 @@ final class Browser implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'browser';
+    public const string TYPE = 'browser';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Browser';
+    private const string NAME = 'Browser';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

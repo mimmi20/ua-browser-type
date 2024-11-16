@@ -16,25 +16,25 @@ final class SocialMediaAgent implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'social-media-agent';
+    public const string TYPE = 'social-media-agent';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Social Media Agent';
+    private const string NAME = 'Social Media Agent';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

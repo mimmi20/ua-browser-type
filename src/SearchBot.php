@@ -16,25 +16,25 @@ final class SearchBot implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'search-bot';
+    public const string TYPE = 'search-bot';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Search Bot';
+    private const string NAME = 'Search Bot';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

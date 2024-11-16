@@ -16,25 +16,25 @@ final class LinkChecker implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'link-checker';
+    public const string TYPE = 'link-checker';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Link Checker';
+    private const string NAME = 'Link Checker';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

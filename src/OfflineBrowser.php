@@ -16,25 +16,25 @@ final class OfflineBrowser implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'offline-browser';
+    public const string TYPE = 'offline-browser';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Offline Browser';
+    private const string NAME = 'Offline Browser';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

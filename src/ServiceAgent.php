@@ -16,25 +16,25 @@ final class ServiceAgent implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'service-agent';
+    public const string TYPE = 'service-agent';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Service Agent';
+    private const string NAME = 'Service Agent';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

@@ -16,25 +16,25 @@ final class BotSyndicationReader implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'bot-syndication-reader';
+    public const string TYPE = 'bot-syndication-reader';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Bot/Crawler';
+    private const string NAME = 'Bot/Crawler';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = true;
+    private const bool READER = true;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

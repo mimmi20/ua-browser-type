@@ -12,13 +12,14 @@ declare(strict_types = 1);
 
 namespace UaBrowserType;
 
+use Override;
 use UaBrowserType\Exception\NotFoundException;
 
 use function array_key_exists;
 
 final class TypeLoader implements TypeLoaderInterface
 {
-    private const OPTIONS = [
+    private const array OPTIONS = [
         Application::TYPE => Application::class,
         Bot::TYPE => Bot::class,
         BotSyndicationReader::TYPE => BotSyndicationReader::class,
@@ -61,6 +62,7 @@ final class TypeLoader implements TypeLoaderInterface
     }
 
     /** @throws NotFoundException */
+    #[Override]
     public function load(string $key): TypeInterface
     {
         if (!$this->has($key)) {

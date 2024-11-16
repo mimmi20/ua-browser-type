@@ -16,25 +16,25 @@ final class UseragentAnonymizer implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'useragent-anonymizer';
+    public const string TYPE = 'useragent-anonymizer';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Useragent Anonymizer';
+    private const string NAME = 'Useragent Anonymizer';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = true;
+    private const bool BOT = true;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }

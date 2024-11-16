@@ -16,25 +16,25 @@ final class Application implements TypeInterface
 {
     use BrowserTypeTrait;
 
-    public const TYPE = 'application';
+    public const string TYPE = 'application';
 
     /**
      * the name of the browser
      */
-    private const NAME = 'Application';
+    private const string NAME = 'Application';
 
     /**
      * the Browser is a Bot
      */
-    private const BOT = false;
+    private const bool BOT = false;
 
     /**
      * the Browser is a Syndication Reader
      */
-    private const READER = false;
+    private const bool READER = false;
 
     /**
      * the Browser uses a transcoding webservice
      */
-    private const TRANSCODER = false;
+    private const bool TRANSCODER = false;
 }
