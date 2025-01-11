@@ -201,6 +201,13 @@ final class TypeTest extends TestCase
                 'isTranscoder' => false,
             ],
             [
+                'type' => 'search-engine',
+                'name' => 'Search Engine',
+                'isBot' => true,
+                'isSyndicationReader' => false,
+                'isTranscoder' => false,
+            ],
+            [
                 'type' => 'security-checker',
                 'name' => 'Security Checker',
                 'isBot' => true,
