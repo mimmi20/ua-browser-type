@@ -148,7 +148,7 @@ jobs:
     if: always()
 
     needs:
-      - "analytics"
+      - "tests"
 
     steps:
       - name: Successful run
