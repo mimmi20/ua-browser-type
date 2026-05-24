@@ -166,7 +166,7 @@ enum Type: string implements TypeInterface
     public function isBot(): bool
     {
         return match ($this) {
-            self::Bot, self::BotSyndicationReader, self::BotTrancoder, self::Crawler, self::DownloadManager, self::LinkChecker, self::SearchBot, self::SearchEngine, self::SecurityChecker, self::SecuritySearchBot, self::ServiceAgent, self::SiteMonitor, self::SocialMediaAgent, self::Tool, self::UseragentAnonymizer => true,
+            self::Bot, self::BotSyndicationReader, self::BotTrancoder, self::Crawler, self::DownloadManager, self::LinkChecker, self::SearchBot, self::SearchEngine, self::SecurityChecker, self::SecuritySearchBot, self::SeoAnalytics, self::ServiceAgent, self::SiteMonitor, self::SocialMediaAgent, self::Tool, self::UseragentAnonymizer => true,
             default => false,
         };
     }

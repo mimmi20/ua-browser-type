@@ -224,7 +224,7 @@ final class TypeTest extends TestCase
             [
                 'type' => 'seo-analytics',
                 'name' => 'SEO & Analytics',
-                'isBot' => false,
+                'isBot' => true,
                 'isSyndicationReader' => false,
                 'isTranscoder' => false,
             ],
