@@ -27,7 +27,7 @@ final class TypeTest extends TestCase
      *
      * @throws ExpectationFailedException
      */
-    #[DataProvider('provider')]
+    #[DataProvider(methodName: 'provider')]
     public function testType(
         string $type,
         string $name,
