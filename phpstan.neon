@@ -85,16 +85,14 @@ parameters:
       tooWideThrowType: true
 
   cognitive_complexity:
-    class: 1
-    function: 1
+    class: 5
+    function: 5
 
   type_coverage:
     return_type: 100
     param_type: 100
     property_type: 100
     constant_type: 100
-    # also, how many files has declare strict types
-    declare: 100
 
   unused_public:
     methods: true
@@ -113,10 +111,33 @@ parameters:
     no_mixed_property: true
     no_mixed_caller: true
 
+  symplify:
+    # enabled by default
+    naming: true
+    complexity: true
+    configurable: false
+    static: true
+    modern: false
+    symfony: false
+    symfonyConfig: false
+    doctrine: false
+    phpunit: false
+
+    # disabled by default
+    mocks: true
+    ctor: false
+
+    # optional
+    symfonyReturnType: true
+    laravelReturnType: false
+    pathStrings: true
+
   ignoreErrors:
 #    - '~Method UaBrowserType\\.*::getName\(\) never returns null so it can be removed from the return type~'
     -
       identifier: argument.named
+    -
+      identifier: symplify.requiredInterfaceContractNamespace
 
 services:
   errorFormatter.sarif:
@@ -125,33 +146,3 @@ services:
       relativePathHelper: @simpleRelativePathHelper
       currentWorkingDirectory: %currentWorkingDirectory%
       pretty: true
-
-rules:
-  # code complexity
-  - Symplify\PHPStanRules\Rules\NoDynamicNameRule
-
-  - Symplify\PHPStanRules\Rules\ForbiddenExtendOfNonAbstractClassRule
-
-  # domain
-  - Symplify\PHPStanRules\Rules\Domain\RequireExceptionNamespaceRule
-  - Symplify\PHPStanRules\Rules\Domain\RequireAttributeNamespaceRule
-  - Symplify\PHPStanRules\Rules\Enum\RequireUniqueEnumConstantRule
-  - Symplify\PHPStanRules\Rules\PreventParentMethodVisibilityOverrideRule
-
-  # paths
-  - Symplify\PHPStanRules\Rules\NoReferenceRule
-
-  # explicit naming
-  - Symplify\PHPStanRules\Rules\ForbiddenMultipleClassLikeInOneFileRule
-
-  - Symplify\PHPStanRules\Rules\Complexity\ForbiddenArrayMethodCallRule
-  # - Symplify\PHPStanRules\Rules\CheckRequiredInterfaceInContractNamespaceRule
-
-  # naming
-  - Symplify\PHPStanRules\Rules\RequireAttributeNameRule
-
-  # naming
-  - Symplify\PHPStanRules\Rules\Explicit\ExplicitClassPrefixSuffixRule
-  - Symplify\PHPStanRules\Rules\NoReturnSetterMethodRule
-  - Symplify\PHPStanRules\Rules\UppercaseConstantRule
-  - Symplify\PHPStanRules\Rules\ClassNameRespectsParentSuffixRule
